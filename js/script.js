@@ -81,8 +81,7 @@ function addItem(){
         }
     }
     var input = document.getElementById('input').value;
-    input = trim(input);
-    input = encodeURIComponent(input);
+    input = encodeURIComponent(input.trim());
     xmlhttp.open('get', 'processRequest.php?action=addItem&item='+input, true);
     xmlhttp.send();
 }
@@ -92,8 +91,7 @@ function changeItem(id){
     var input = document.getElementById(id).parentNode.innerHTML;
     var pos = input.indexOf("<span");
     input = input.substring(0, pos);
-    input = trim(input);
-    input = encodeURIComponent(input);
+    input = encodeURIComponent(input.trim());
     xmlhttp.open('get', "processRequest.php?action=changeItem&item="+input+"&id="+id, true);
     xmlhttp.send();
 }
